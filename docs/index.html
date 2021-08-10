@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!--
+    File: index.html
+    GUIAssignment:  Creating an Interactive Dynamic Table
+    Haley Santomas, UMass Lowell Computer Science, haley_santomas@student.uml.edu
+    Date: 8/5/2021
+    Summary: This page uses Javascript to display a dynamic multiplication table based on the user inputs in the form. Additionally, it uses JQuery for validation purposes.
+    It also utilizes a tabbed interface for saving and loading tables.
+-->
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Multiplication Table</title>
+        <!-- CSS -->
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+        <link rel="stylesheet" href="css/style.css">
+        <!-- JQuery-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    </head>
+    <body>
+        <!-- The main div. -->
+        <div id="div_wrapper">
+            <!-- The form. -->
+            <form id="form_submission">
+                <table id="tableForm">
+                    <tr>
+                        <td>
+                            <label class="label_form">Row Max</label>
+                        </td>
+                        <td>
+                            <input type="number" id="rowMax" name="rowMax" placeholder="#">
+                            <div id="slider_rowMax" class="slider"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="label_form">Row Min</label>
+                        </td>
+                        <td>
+                            <input type="number" id="rowMin" name="rowMin" placeholder="#">
+                            <div id="slider_rowMin" class="slider"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="label_form">Column Max</label>
+                        </td>
+                        <td>
+                            <input type="number" id="colMax" name="colMax" placeholder="#">
+                            <div id="slider_colMax" class="slider"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="label_form">Column Min</label>
+                        </td>
+                        <td>
+                            <input type="number" id="colMin" name="colMin" placeholder="#">
+                            <div id="slider_colMin" class="slider"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <!-- Return false to prevent automatic refresh of page. -->
+                            <input type="submit" id="submitButton" name="submitButton" value="Save Table" onclick="saveTable(); return false;">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+
+            <!-- The error message. NOTE: No longer appears after switch to JQuery. -->
+            <div class="errorMessage">
+                <h3 class="errorMessage">ERROR</h3>
+                <p class="errorMessage" id="errorMessageText"></p>
+            </div>
+
+            <!-- The submission result. -->
+            <table id="tableResult">
+                <!-- This gets filled in with JavaScript. -->
+            </table>
+        </div>
+
+        <!-- The div where the tabbed bit goes. -->
+        <div id="div_tabs">
+            <ul id="list_tabs">
+                <!-- This gets filled in with JavaScript. -->
+            </ul>
+        </div>
+
+        <!-- Javascript-->
+        <script type="text/javascript" src="javascript/script.js"></script>
+    </body>
+</html>
